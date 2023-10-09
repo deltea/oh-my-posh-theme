@@ -1,0 +1,159 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": "{{ .Shell }} | {{ .Folder }}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:white",
+          "template": "\n\u256d\u2500"
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "foreground": "p:black",
+          "background": "p:white",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "template": "{{ .FormattedMs }}",
+          "properties": {
+            "style": "austin",
+            "always_enabled": true
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:white",
+          "template": "─"
+        },
+
+        {
+          "type": "session",
+          "style": "diamond",
+          "foreground": "p:white",
+          "background": "p:plum",
+          "leading_diamond": "",
+          "template": "<b>\ueb99 {{ .UserName }}</b> "
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:white",
+          "background": "p:blush",
+          "template": " \uf07b {{ path .Path .Location }} ",
+          "properties": {
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:white",
+          "background": "p:salmon",
+          "template": " {{ url .HEAD .UpstreamURL }}{{ if .Working.Changed }} \uf044{{ end }} ",
+          "properties": {
+            "branch_icon": "\uf418 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "type": "battery",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:white",
+          "background": "p:sky",
+          "template": " {{ if not .Error }}\uf0e7 {{ .Percentage }}%{{ end }}{{ .Error }} "
+        },
+        {
+          "type": "shell",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:white",
+          "background": "p:teal_blue",
+          "template": " \uea85 {{ .Name }} "
+        },
+        {
+          "type": "connection",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "foreground": "p:white",
+          "background": "p:teal",
+          "template": " \uf1eb  {{ .SSID }} ",
+          "properties": {
+            "type": "wifi"
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:white",
+          "template": "─"
+        },
+        {
+          "type": "upgrade",
+          "style": "plain",
+          "foreground": "p:white",
+          "template": "(\uf019 Upgrade to {{ .Version }}) "
+        },
+
+        {
+          "type": "time",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "<transparent>\ue0b2</>",
+          "foreground": "p:black",
+          "background": "p:white",
+          "template": " \uf133 {{ .CurrentDate | date .Format }} ",
+          "properties": {
+            "time_format": "Mon 01/02/2006"
+          }
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "",
+          "foreground": "p:black",
+          "background": "p:white",
+          "template": " \uf017 {{ .CurrentDate | date .Format }} ",
+          "properties": {
+            "time_format": "03:04 PM"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:white",
+          "template": "\u2570\u2500\u276f\u276f "
+        }
+      ]
+    }
+  ],
+  "palette": {
+    "blush": "#DA627D",
+    "plum": "#9A348E",
+    "salmon": "#FCA17D",
+    "sky": "#86BBD8",
+    "tan": "#CC3802",
+    "teal": "#047E84",
+    "teal_blue": "#33658A",
+    "white": "#FFFFFF",
+    "black": "#282c34"
+  }
+}
