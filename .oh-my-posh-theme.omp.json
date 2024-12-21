@@ -4,6 +4,7 @@
     "black": "#282828",
     "primary": "#FE8018",
     "secondary": "#D65D0D",
+    "tertiary": "#989719",
     "white": "#EBDBB2"
   },
   "console_title_template": "{{ .Shell }} | {{ .Folder }}",
@@ -66,6 +67,14 @@
           "background": "p:primary",
           "type": "path",
           "style": "powerline"
+        },
+        {
+          "type": "battery",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:white",
+          "background": "p:tertiary",
+          "template": " {{ if not .Error }}\uf0e7 {{ .Percentage }}%{{ end }}{{ .Error }} "
         },
         {
           "properties": {
