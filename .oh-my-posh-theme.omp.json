@@ -1,11 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "black": "#282828",
-    "primary": "#FE8018",
-    "secondary": "#D65D0D",
-    "tertiary": "#989719",
-    "white": "#EBDBB2"
+    "black": "#1A1B26",
+    "primary": "#414868",
+    "secondary": "#24283b",
+    "tertiary": "#5e81ac",
+    "red": "#81a1c1",
+    "white": "#D8DEE9"
   },
   "console_title_template": "{{ .Shell }} | {{ .Folder }}",
   "blocks": [
@@ -75,6 +76,17 @@
           "foreground": "p:white",
           "background": "p:tertiary",
           "template": " {{ if not .Error }}\uf0e7 {{ .Percentage }}%{{ end }}{{ .Error }} "
+        },
+        {
+          "type": "git",
+          "properties": {
+            "branch_icon": "⎇ "
+          },
+          "template": " {{ .HEAD }} ",
+          "foreground": "p:black",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:red",
+          "style": "powerline"
         },
         {
           "properties": {
